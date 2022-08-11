@@ -316,7 +316,7 @@ function setup() {
     dodo();
     dodo();
     fxpreview();
-    noLoop();
+    //noLoop();
 }
 var cc1;
 var cc2;
