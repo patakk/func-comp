@@ -329,13 +329,15 @@ function draw(){
 function dodo() {
     background(1);
 
-    cc1 = map2(noise(1));
-    cc1 = saturatecol(cc1, -0.3);
-    cc1 = brightencol(cc1, +0.3);
+    var h1 = noise(18.953);
+    var h2 = (h1+0.5+.1*(-.5+2*noise(99.531)))%1;
+    cc1 = map2(h1);
+    cc1 = saturatecol(cc1, -0.3*power(noise(12.345), 3));
+    cc1 = brightencol(cc1, +0.3*power(noise(23.45631), 3));
 
-    cc2 = map2(noise(131.31));
-    cc2 = saturatecol(cc2, +0.3);
-    cc2 = brightencol(cc2, -0.8);
+    cc2 = map2(h2);
+    cc2 = saturatecol(cc2, +0.3*power(noise(831.33231), 3));
+    cc2 = brightencol(cc2, -0.8*power(noise(292.555), 3));
 
     effect.setUniform('u_resolution', [resx, resy]);
     effect.setUniform('u_time', mouseX);
